@@ -13,7 +13,6 @@ for (let i = 0; i < numberOfStars; i++) {
 
   document.body.appendChild(star);
 
-  // CHANGED: Reduced time from 1000 to 10 so stars appear immediately
   setTimeout(() => {
     star.style.opacity = 1; 
     star.style.animation = `twinkle ${2 + Math.random()*2}s infinite`; 
@@ -25,20 +24,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const audioBtn = document.getElementById("audio-control");
     const iconSpan = document.getElementById("icon");
 
-    // Helper function to change the icon
     function updateUI(isPlaying) {
         iconSpan.innerText = isPlaying ? "🔊" : "🔇";
     }
 
     function toggleMusic() {
         if (audio.paused) {
-            // Play music
             audio.play().catch(e => console.log("Audio play error:", e));
-            updateUI(true); // Update icon to Speaker
+            updateUI(true);
         } else {
-            // Pause music
             audio.pause();
-            updateUI(false); // Update icon to Mute
+            updateUI(false);
         }
     }
 
