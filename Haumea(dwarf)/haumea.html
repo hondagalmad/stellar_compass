@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Solar System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --mc-glow: #a76f3d;
+    }
+    body {
+    font-family: 'Press Start 2P', cursive;
+    /* background-color: #050505;  شيلنا اللون */
+    background-image: url('space-background.jpg'); /* حطي اسم الصورة هنا */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    margin: 0;
+}
+
+    #bg-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -1;
+      object-fit: cover;
+      opacity: 0.8;
+    }
+
+    /* بطاقة مع توهج شعاعي */
+    .mc-card {
+      background: rgba(0,0,0,0.75);
+      border: 2px solid var(--mc-glow);
+      padding: 20px;
+      max-width: 800px;
+      width: 95%;
+      margin: 40px auto;
+      text-align: center;
+      backdrop-filter: blur(2px);
+      /* شعاع توهج */
+      box-shadow:
+        0 0 10px var(--mc-glow),
+        0 0 20px var(--mc-glow),
+        0 0 30px var(--mc-glow),
+        0 0 40px var(--mc-glow);
+      border-radius: 8px;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    /* حركة التوهج */
+    @keyframes glow {
+      0% { box-shadow: 0 0 10px var(--mc-glow), 0 0 20px var(--mc-glow), 0 0 30px var(--mc-glow), 0 0 40px var(--mc-glow); }
+      50% { box-shadow: 0 0 20px var(--mc-glow), 0 0 40px var(--mc-glow), 0 0 60px var(--mc-glow), 0 0 80px var(--mc-glow); }
+      100% { box-shadow: 0 0 10px var(--mc-glow), 0 0 20px var(--mc-glow), 0 0 30px var(--mc-glow), 0 0 40px var(--mc-glow); }
+    }
+
+    .title { color: var(--mc-glow); font-size: 2.5rem; margin-bottom: 20px; }
+    .subtitle { color: #e8ddbc; font-size: 0.8rem; margin-bottom: 30px; text-transform: uppercase; }
+    .img-frame img { width: 250px; height: 250px; display: block; margin: 0 auto; object-fit: contain; }
+    h2 { color: #edbf97ff; font-size: 1.2rem; margin-top: 30px; margin-bottom: 15px; border-bottom: 2px solid #f9f9f9cd; display: inline-block; padding-bottom: 5px; }
+    p { font-size: 0.8rem; color: #ddd; margin-bottom: 10px; }
+    .stat-list { text-align: left; background: rgba(255,255,255,0.1); padding: 15px; border: 2px solid #555; margin: 20px 0; }
+    .stat-item { margin: 10px 0; display: flex; justify-content: space-between; align-items: center; }
+    .stat-label { color: var(--mc-glow); }
+    .stat-value { color: white; }
+    .square-bullet { display: inline-block; width: 8px; height: 8px; background-color: var(--mc-glow); margin-right: 10px; }
+    .mc-btn { background-color: #777; border: 4px solid #aaa #444 #444 #aaa; color: white; padding: 15px 30px; font-family: 'Press Start 2P', cursive; font-size: 0.9rem; cursor: pointer; text-shadow: 2px 2px 0 #000; transition: transform 0.1s; margin: 10px; }
+    .mc-btn:hover { background-color: #888; }
+    .mc-btn:active { border-color: #444 #aaa #aaa #444; transform: translateY(4px); }
+
+    body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(3px 3px at 20px 30px, #ffffff, transparent),
+        radial-gradient(3px 3px at 40px 70px, #a0d2ff, transparent),
+        radial-gradient(2px 2px at 90px 40px, #fff, transparent),
+        radial-gradient(2px 2px at 130px 80px, #fff, transparent),
+        radial-gradient(3px 3px at 160px 30px, #85c1e9, transparent),
+        radial-gradient(2px 2px at 200px 120px, #fff, transparent),
+        radial-gradient(3px 3px at 250px 60px, #ffffff, transparent),
+        radial-gradient(2px 2px at 280px 150px, #fff, transparent),
+        radial-gradient(3px 3px at 320px 40px, #a0d2ff, transparent),
+        radial-gradient(2px 2px at 350px 90px, #fff, transparent),
+        radial-gradient(3px 3px at 380px 130px, #ffffff, transparent),
+        radial-gradient(2px 2px at 420px 70px, #fff, transparent),
+        radial-gradient(3px 3px at 460px 110px, #85c1e9, transparent),
+        radial-gradient(2px 2px at 500px 50px, #fff, transparent);
+    background-repeat: repeat;
+    background-size: 500px 500px;
+    z-index: -1;
+    /* حركة زاوية يمين-تحت + توهج */
+    animation: twinkle 6s infinite alternate, moveStars 100s linear infinite;
+}
+
+/* زيادة توهج (opacity متذبذب) */
+@keyframes twinkle {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+}
+
+/* تحريك النجوم بزاوية يمين-تحت */
+@keyframes moveStars {
+    0% { background-position: 0 0; }
+    100% { background-position: 500px 500px; }
+}
+
+
+  </style>
+</head>
+<body>
+
+<video autoplay muted loop id="bg-video">
+  <source src="space.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+<div class="min-h-screen flex flex-col items-center justify-center p-4">
+
+  <!-- Haumea -->
+  <div class="mc-card">
+    <h1 class="title">Haumea</h1>
+    <p class="subtitle">Dwarf Planet • Kuiper Belt</p>
+    <div class="img-frame">
+      <img src="haumea.png" alt="Haumea Image">
+    </div>
+    <h2>Overview</h2>
+    <p>Haumea is an elongated, rapidly rotating dwarf planet in the Kuiper Belt.</p>
+    <div class="stat-list">
+      <div class="stat-item"><span><span class="square-bullet"></span>Diameter:</span><span class="stat-value">1,632 km</span></div>
+      <div class="stat-item"><span><span class="square-bullet"></span>Orbit:</span><span class="stat-value">284 years</span></div>
+      <div class="stat-item"><span><span class="square-bullet"></span>Discovered:</span><span class="stat-value">2004</span></div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
