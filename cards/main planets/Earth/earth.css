@@ -174,7 +174,8 @@ li {
   border: 6px solid #bfbdaf;  
 }
 
-.btn{
+.button
+{
   position: absolute;
   top: 30px;
   left: 30px;
@@ -193,11 +194,22 @@ li {
   border-bottom: 4px solid #C4C4C4;
 }
 
-.btn:active {
+
+.button:hover
+{
+  background: linear-gradient(
+    to bottom,
+    #AFAFAF 0%,
+    #7B7B7B 50%,
+  );
+}
+
+
+.button:active
+{
   border-top: 4px solid #C4C4C4;
   border-left: 4px solid #C4C4C4;
   border-right: 4px solid #3F3F3F;
   border-bottom: 4px solid #3F3F3F;
-  transform: translateY(-6px); 
-
+  transform: translateY(-6px);
 }

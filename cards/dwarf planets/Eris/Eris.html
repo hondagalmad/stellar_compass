@@ -93,7 +93,20 @@
     <img src="img3.jpg">
     <img src="img4.png">
   </div>
+  <audio id="clickSound" src="minecraft_button.m4a"></audio>
 
+<button class="button" onclick="goBack()">Back</button>
+
+<script>
+function goBack() {
+    const sound = document.getElementById("clickSound");
+    sound.play();
+
+    setTimeout(() => {
+        window.location.href = "/home page/homepage.html#dwarf-planets";
+    }, 150);
+}
+</script>
 </body>
 
 </html>

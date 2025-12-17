@@ -69,13 +69,21 @@
     <img src="img4.jpg">
   </div>
 
-    <input type="button" class="button" id="backButton" value="Back">
-  <script>
-    document.getElementById("backButton").addEventListener("click", function()
-    {
-        new Audio("minecraft_button.m4a").play();
-   });
-  </script>
+   <audio id="clickSound" src="minecraft_button.m4a"></audio>
+
+<button class="button" onclick="goBack()">Back</button>
+
+<script>
+function goBack() {
+    const sound = document.getElementById("clickSound");
+    sound.play();
+
+    setTimeout(() => {
+        window.location.href = "/home page/homepage.html#main-planets";
+    }, 150);
+}
+</script>
+
   
 </body>
 </html>
