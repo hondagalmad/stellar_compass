@@ -1,4 +1,5 @@
-* {
+* 
+{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -6,7 +7,8 @@
   font-weight: normal !important;
 }
 
-body {
+body 
+{
   background: url("download.gif") no-repeat center center fixed;
   background-size: cover;
   color: #ffffff;
@@ -15,7 +17,8 @@ body {
 }
 
 
-.title {
+.title 
+{
   margin-top: 50px;
   font-size: 60px;
   color: #6bdae6;
@@ -23,7 +26,8 @@ body {
 }
 
 
-.planet-section {
+.planet-section 
+{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,13 +36,15 @@ body {
 }
 
 
-.planet {
+.planet
+{
   width: 350px;
   height: auto;
 }
 
 
-.right-card {
+.right-card
+{
   width: 400px;
   height: 700px;
   padding: 20px;
@@ -48,7 +54,8 @@ body {
   text-align: left;
 }
 
-.left-card{
+.left-card
+{
   width: 400px;
   height: 700px;
   padding: 20px;
@@ -58,8 +65,8 @@ body {
   text-align: left;
 }
 
-
-.section-title {
+.section-title 
+{
   margin-top: 120px;
   font-size: 50px;
   color:  #6bdae6;
@@ -67,7 +74,8 @@ body {
 }
 
 
-.missions-container {
+.missions-container
+{
   display: flex;
   justify-content: space-between;
   width: 85%;
@@ -75,18 +83,21 @@ body {
   text-align: left;
 }
 
-.mission-box {
+.mission-box
+{
   width: 45%;
 }
 
-.mission-title {
+.mission-title
+{
   font-size: 30px;
   color:  #6bdae6;
   margin-bottom: 15px;
 }
 
 
-.text3 {
+.text3
+{
   width: 80%;
   margin: 50px auto;
   text-align: left;
@@ -95,17 +106,60 @@ body {
 }
 
 
-.images-container {
+.images-container
+{
   display: flex;
   justify-content: center;
   gap: 40px;
   margin: 50px auto 100px auto;
 }
 
-.images-container img {
+.images-container img
+{
   width: 300px;
   height: 300px;
   border-radius: 50px;
   border: 6px solid  #6bdae6;
   object-fit: cover;
+}
+
+
+.button
+{
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 150px;
+  height: 50px;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  text-shadow: 2px 2px 0px #3F3F3F;
+  background-color: rgb(146, 146, 146);
+  color: rgb(255, 249, 249);
+  border: 3px solid rgb(0, 0, 0);
+  border-top: 4px solid #3F3F3F;
+  border-left: 4px solid #3F3F3F;
+  border-right: 4px solid #C4C4C4;
+  border-bottom: 4px solid #C4C4C4;
+}
+
+
+.button:hover
+{
+  background: linear-gradient(
+    to bottom,
+    #AFAFAF 0%,
+    #7B7B7B 50%,
+  );
+}
+
+
+.button:active
+{
+  border-top: 4px solid #C4C4C4;
+  border-left: 4px solid #C4C4C4;
+  border-right: 4px solid #3F3F3F;
+  border-bottom: 4px solid #3F3F3F;
+  transform: translateY(-6px); 
 }

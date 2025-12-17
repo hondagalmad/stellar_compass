@@ -11,13 +11,21 @@
 
 <body>
 
+  <input type="button" class="button" id="backButton" value="Back">
+  <script>
+    document.getElementById("backButton").addEventListener("click", function()
+    {
+        new Audio("minecraft_button.m4a").play();
+    });
+  </script>
+
   <h1 class="title">Uranus</h1>
 
   <div class="planet-section">
 
 
     <div class="left-card">
-      <h1 style="font-size: 30px; color :#ceb8b8">Basic Stats</h1>
+      <h1 style="font-size: 30px; color :#6bdae6;">Basic Stats</h1>
       <br>
       <p style="font-size: 25px; line-height: 2.2;">Type: Ice Giant</p>
       <p>Diameter: ~50,724 km</p>
@@ -34,7 +42,7 @@
 
 
     <div class="right-card">
-      <h1 style="font-size:30px; color :#ceb8b8">Atmosphere & Surface</h1>
+      <h1 style="font-size:30px; color :#6bdae6;">Atmosphere & Surface</h1>
       <br>
       <p>
         Uranus has a cold, icy atmosphere rich in hydrogen, helium, and methane.
