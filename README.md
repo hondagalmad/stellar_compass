@@ -60,7 +60,7 @@ To run this project locally:
 
 1. Clone the repo:
    ```bash
-   git clone [https://github.com/your-username/Stellar-Compass.git](https://github.com/your-username/Stellar-Compass.git)
+   git clone https://github.com/hondagalmad/stellar_compass.git
    
 ---
 
